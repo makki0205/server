@@ -10,31 +10,31 @@ import (
 	reflect "reflect"
 )
 
-// MockUser is a mock of User interface
-type MockUser struct {
+// MockUserService is a mock of UserService interface
+type MockUserService struct {
 	ctrl     *gomock.Controller
-	recorder *MockUserMockRecorder
+	recorder *MockUserServiceMockRecorder
 }
 
-// MockUserMockRecorder is the mock recorder for MockUser
-type MockUserMockRecorder struct {
-	mock *MockUser
+// MockUserServiceMockRecorder is the mock recorder for MockUserService
+type MockUserServiceMockRecorder struct {
+	mock *MockUserService
 }
 
-// NewMockUser creates a new mock instance
-func NewMockUser(ctrl *gomock.Controller) *MockUser {
-	mock := &MockUser{ctrl: ctrl}
-	mock.recorder = &MockUserMockRecorder{mock}
+// NewMockUserService creates a new mock instance
+func NewMockUserService(ctrl *gomock.Controller) *MockUserService {
+	mock := &MockUserService{ctrl: ctrl}
+	mock.recorder = &MockUserServiceMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *MockUser) EXPECT() *MockUserMockRecorder {
+func (m *MockUserService) EXPECT() *MockUserServiceMockRecorder {
 	return m.recorder
 }
 
 // Create mocks base method
-func (m *MockUser) Create(user model.User) (string, error) {
+func (m *MockUserService) Create(user model.User) (string, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Create", user)
 	ret0, _ := ret[0].(string)
@@ -43,22 +43,22 @@ func (m *MockUser) Create(user model.User) (string, error) {
 }
 
 // Create indicates an expected call of Create
-func (mr *MockUserMockRecorder) Create(user interface{}) *gomock.Call {
+func (mr *MockUserServiceMockRecorder) Create(user interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockUser)(nil).Create), user)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockUserService)(nil).Create), user)
 }
 
-// Update mocks base method
-func (m *MockUser) Update(user model.User) (model.User, error) {
+// GetAll mocks base method
+func (m *MockUserService) GetAll() ([]model.User, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Update", user)
-	ret0, _ := ret[0].(model.User)
+	ret := m.ctrl.Call(m, "GetAll")
+	ret0, _ := ret[0].([]model.User)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// Update indicates an expected call of Update
-func (mr *MockUserMockRecorder) Update(user interface{}) *gomock.Call {
+// GetAll indicates an expected call of GetAll
+func (mr *MockUserServiceMockRecorder) GetAll() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Update", reflect.TypeOf((*MockUser)(nil).Update), user)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetAll", reflect.TypeOf((*MockUserService)(nil).GetAll))
 }
