@@ -18,6 +18,7 @@ jobs:
           command: gotestcover -coverprofile=coverage.txt ./...
       - run:
           name: cove
+          command: bash <(curl -s https://codecov.io/bash)
 
 workflows:
   version: 2.1
