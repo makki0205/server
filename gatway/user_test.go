@@ -45,7 +45,6 @@ func TestGetUsers(t *testing.T) {
 		})
 	}
 }
-
 func TestCreateUsers(t *testing.T) {
 	mock := service.SetMock(t)
 	tests := httpTests{
