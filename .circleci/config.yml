@@ -8,7 +8,7 @@ jobs:
       -
     working_directory: /app
     docker:
-      - image: makki0205/deploy
+      - image: circleci/golang:1.12.6-stretch
     steps:
       - checkout
       - run:
