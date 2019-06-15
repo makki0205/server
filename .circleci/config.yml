@@ -13,10 +13,7 @@ jobs:
       - checkout
       - run:
           name: go test
-          command: make test
-      - run:
-          name: install pkg
-          command: /go/bin/gotestcover -coverprofile=coverage.txt ./...
+          command: go test -cover -race -coverprofile=coverage.txt ./...
       - run:
           name: cove
           command: bash <(curl -s https://codecov.io/bash)
