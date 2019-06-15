@@ -6,7 +6,7 @@ jobs:
       - GO111MODULE: "on"
       - CGO_ENABLED: "1"
       -
-    working_directory: /app
+    working_directory: /go/src/github.com/makki0205/server
     docker:
       - image: circleci/golang:1.12.6-stretch
     steps:
