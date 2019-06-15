@@ -14,6 +14,10 @@ func Internal(c *gin.Context) {
 	Status(http.StatusInternalServerError, c)
 }
 
+func BadRequest(val interface{}, c *gin.Context) {
+	c.JSON(http.StatusBadRequest, val)
+}
+
 func Json(json interface{}, c *gin.Context) {
 	c.JSON(http.StatusOK, json)
 }

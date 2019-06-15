@@ -14,17 +14,21 @@ type UserService interface {
 }
 
 type userService struct {
-	user []model.User
+	user  []model.User
+	newID func() string
 }
 
 func NewUserService() *userService {
 	return &userService{
 		user: make([]model.User, 0),
+		newID: func() string {
+			return xid.New().String()
+		},
 	}
 }
 
 func (u *userService) Create(user model.User) (string, error) {
-	user.ID = xid.New().String()
+	user.ID = u.newID()
 	u.user = append(u.user, user)
 	return user.ID, nil
 }

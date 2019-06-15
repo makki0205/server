@@ -2,11 +2,11 @@ coverage:
   status:
     project:
       default:
-        target: auto
+        target: 80%
         threshold: 3
         base: parent
     patch:
       default:
-        target: auto
+        target: 80%
         threshold: 10
         base: pr
