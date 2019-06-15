@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  test:
+    environment:
+      - GO111MODULE: "on"
+      - CGO_ENABLED: "0"
+    working_directory: /app
+    docker:
+      - image: makki0205/deploy
+    steps:
+      - checkout
+      - run:
+          name: go test
+          command: make test
+      - run:
+          name: install pkg
+          command: gotestcover -coverprofile=coverage.txt ./...
+      - run:
+          name: cove
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test

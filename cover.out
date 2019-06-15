@@ -1,7 +1,0 @@
-mode: set
-github.com/makki0205/server/service/mock.go:15.33,24.2 4 1
-github.com/makki0205/server/gatway/gatway.go:5.30,10.2 4 1
-github.com/makki0205/server/gatway/user.go:11.37,13.2 1 1
-github.com/makki0205/server/gatway/user.go:15.31,17.16 2 1
-github.com/makki0205/server/gatway/user.go:22.2,22.20 1 1
-github.com/makki0205/server/gatway/user.go:17.16,21.3 3 1
